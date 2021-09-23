@@ -141,6 +141,24 @@ function findPlayer(name) {
   }
 }
 
+function numPointsScored(name) {
+  return findPlayer(name).Points;
+}
+
+function shoeSize(name) {
+  return findPlayer(name).Shoe;
+}
+
+function teamNames() {
+
+  // Object.values returns an array (here an array of objects)
+  const teamInfo = Object.values(gameObject());
+
+  // .map, is an array method that returns a new array
+  const results = teamInfo.map(obj => obj.teamName);
+  return results;
+
+}
 
 const iterate = (obj) => {
     Object.keys(obj).forEach(key => {
@@ -162,3 +180,4 @@ const iterate = (obj) => {
 // debugger;
 // iterate(gameObject());
 console.log(numPointsScored("Jason Terry"))
+console.log(teamNames())
