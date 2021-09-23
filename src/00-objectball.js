@@ -127,7 +127,13 @@ function awayTeamPlayers() {
   return gameObject()['away']['players'];
 }
 
-
+function iterateThrough() {
+  let awayPlayers = awayTeamPlayers();
+  let currentIndex;
+  for(let i=0; i<awayPlayers.length; i++){
+    currentIndex = awayPlayers[i];
+  }
+}
 // console.log(gameObject());
 
 console.log(homeTeamColors());
