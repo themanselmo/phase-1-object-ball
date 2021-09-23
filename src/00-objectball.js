@@ -127,7 +127,7 @@ function awayTeamPlayers() {
   return gameObject()['away']['players'];
 }
 
-function numPointsScored(name) {
+function findPlayer(name) {
   const theGame = gameObject();
 
   for (const team in theGame) {
@@ -135,7 +135,7 @@ function numPointsScored(name) {
     
     for(const thePlayer in players) {
       if (thePlayer === name) {
-        return players[thePlayer].Points
+        return players[thePlayer];
       }
     }
   }
