@@ -127,47 +127,38 @@ function awayTeamPlayers() {
   return gameObject()['away']['players'];
 }
 
-function iterateThrough() {
-  let awayPlayers = awayTeamPlayers();
-  let currentIndex;
-  for(let i=0; i<awayPlayers.length; i++){
-    currentIndex = awayPlayers[i];
-  }
-}
-// console.log(gameObject());
+function numPointsScored(name) {
+  const theGame = gameObject();
 
-function iterateThroughTeamKeys(team){
-  let myTeam = team;
-  for(let key in myTeam) {
-    let value = myTeam[key]
-    console.log(`current key: ${key}, current key value: ${value}`);
-  }
-}
-
-function iterateThroughGameObject(){
-  let game = gameObject();
-  // let gameKeys = Object.keys(game);
-  // let values = Object.values(gameKeys);
-  
-  for(let gameKey in game){
-    let teamObj = game[gameKey];
-
-    for(let teamKey in teamObj) {
-      let playerData = teamObj.player;
-
-      for(let key in playerData) {
-        let value = Object.values(playerData);
-        console.log(`current key: ${key}, current key value: ${value}`);
+  for (const team in theGame) {
+    const players = theGame[team].players
+    
+    for(const thePlayer in players) {
+      if (thePlayer === theName) {
+        return players[thePlayer].Points
       }
     }
-    // console.log(`current key: ${key}, current key value: ${value}`);
   }
-  
+}
+
+
+const iterate = (obj) => {
+    Object.keys(obj).forEach(key => {
+
+    console.log(`key: ${key}, value: ${obj[key]}`)
+
+    if (typeof obj[key] === 'object') {
+            iterate(obj[key])
+        }
+    })
 }
 
 // console.log(homeTeamColors());
 // console.log(awayTeamPlayers());
 // iterateThrough();
 // iterateThroughKeys(gameObject().home);
-debugger;
-iterateThroughGameObject();
+// debugger;
+// iterateThroughGameObject();
+// debugger;
+// iterate(gameObject());
+
