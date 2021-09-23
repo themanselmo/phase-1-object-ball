@@ -117,4 +117,18 @@ function gameObject() {
   return gameObject;
 }
 
-console.log(gameObject());
+function homeTeamColors() {
+  // let myGameObject = gameObject();
+  // return gameObject().home.teamName;
+    return gameObject()['home']['colors'];
+}
+
+function awayTeamPlayers() {
+  return gameObject()['away']['players'];
+}
+
+
+// console.log(gameObject());
+
+console.log(homeTeamColors());
+console.log(awayTeamPlayers());
