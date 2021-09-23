@@ -134,7 +134,7 @@ function numPointsScored(name) {
     const players = theGame[team].players
     
     for(const thePlayer in players) {
-      if (thePlayer === theName) {
+      if (thePlayer === name) {
         return players[thePlayer].Points
       }
     }
@@ -161,4 +161,4 @@ const iterate = (obj) => {
 // iterateThroughGameObject();
 // debugger;
 // iterate(gameObject());
-
+console.log(numPointsScored("Jason Terry"))
