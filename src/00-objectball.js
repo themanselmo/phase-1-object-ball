@@ -136,5 +136,38 @@ function iterateThrough() {
 }
 // console.log(gameObject());
 
-console.log(homeTeamColors());
-console.log(awayTeamPlayers());
+function iterateThroughTeamKeys(team){
+  let myTeam = team;
+  for(let key in myTeam) {
+    let value = myTeam[key]
+    console.log(`current key: ${key}, current key value: ${value}`);
+  }
+}
+
+function iterateThroughGameObject(){
+  let game = gameObject();
+  // let gameKeys = Object.keys(game);
+  // let values = Object.values(gameKeys);
+  
+  for(let gameKey in game){
+    let teamObj = game[gameKey];
+
+    for(let teamKey in teamObj) {
+      let playerData = teamObj.player;
+
+      for(let key in playerData) {
+        let value = Object.values(playerData);
+        console.log(`current key: ${key}, current key value: ${value}`);
+      }
+    }
+    // console.log(`current key: ${key}, current key value: ${value}`);
+  }
+  
+}
+
+// console.log(homeTeamColors());
+// console.log(awayTeamPlayers());
+// iterateThrough();
+// iterateThroughKeys(gameObject().home);
+debugger;
+iterateThroughGameObject();
